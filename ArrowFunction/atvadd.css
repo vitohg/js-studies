@@ -1,0 +1,19 @@
+body {
+    
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadrado {
+    background-image: url('https://source.unsplash.com/random/150x150');
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    position: relative;
+    flex-direction: column;
+    top: 350px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease-in;
+}

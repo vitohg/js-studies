@@ -116,6 +116,12 @@ body {
 
 }
 
+.form-control.success small{
+
+    visibility: visible;
+    color: #83BD75;
+}
+
 
 /*
 height: 30px;

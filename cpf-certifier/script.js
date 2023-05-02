@@ -12,9 +12,11 @@ function checkInputs() {
 
     if (cpfValue === "") {
         setErrorFor(cpf, "O CPF é obrigatório.");
-    }
-    else{
-        setSuccessFor(cpf);
+
+    }else{
+        setSuccessFor(cpf, "O CPF é valido.");
+
+
     }
 }
 
@@ -27,9 +29,17 @@ function setErrorFor(input, message) {
     formControl.className = "form-control error";
 }
 
-function setSuccessFor(input) {
+function setSuccessFor(input, message) {
     const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+
+    small.innerText = message;
 
     formControl.className = "form-control success";
 }
 
+function checkcpf(cpf) {
+    // inserir com o return a Mascara do cpf
+    
+
+}

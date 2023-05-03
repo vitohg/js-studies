@@ -1,5 +1,13 @@
 const form = document.getElementById("form");
 const cpf = document.getElementById("cpf");
+const input = document.querySelector("input")
+
+input.addEventListener("keypress", () => {
+  let inputValue = input.value.length
+
+  console.log(inputValue);
+    
+});
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -38,8 +46,3 @@ function setSuccessFor(input, message) {
     formControl.className = "form-control success";
 }
 
-function checkcpf(cpf) {
-    // inserir com o return a Mascara do cpf
-    
-
-}

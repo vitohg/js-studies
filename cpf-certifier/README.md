@@ -11,4 +11,4 @@ Programa de computador escrito em Javascript que checa se um CPF é válido.
 
 ## Licença
 
-Se você vender esse software, o bicho-papão vai te pegar.
+Se você vender esse software, algo vai acontecer!!!!

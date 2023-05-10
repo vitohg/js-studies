@@ -34,3 +34,21 @@ document.getElementById("idade").innerHTML = "você tem ${ano} anos, ${mes} mese
 
     
 }
+
+const form = document.getElementById("form");
+const dia = document.getElementById("dia");
+const mes = document.getElementById("mes");
+const ano = document.getElementById("ano");
+let input = document.querySelector("input");
+
+
+
+function setErrorFor(input, mensage) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+
+    small.innerText = mensage;
+
+    formControl.className
+    
+}

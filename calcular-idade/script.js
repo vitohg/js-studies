@@ -36,10 +36,32 @@ document.getElementById("idade").innerHTML = "você tem ${ano} anos, ${mes} mese
 }
 
 const form = document.getElementById("form");
-const dia = document.getElementById("dia");
-const mes = document.getElementById("mes");
-const ano = document.getElementById("ano");
+const dia = document.getElementById("dia").value
+const mes = document.getElementById("mes").value
+const ano = document.getElementById("ano").value
 let input = document.querySelector("input");
+
+let data = new Date();
+
+let dia2 = data.getDate();
+let mes2 = data.getMonth();
+let ano2 = data.getFullYear();
+
+let mesCadaAno = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+if (dia2 > dia) {
+
+    dia2 = dia + mesCadaAno [mes2 - 1];
+    mes2 = mes2 + 1;
+
+}
+
+if (mes > mes2) {
+
+    mes2 = mes2 + 12;
+    ano2 = ano2 - 1;
+
+}
 
 
 
@@ -49,6 +71,15 @@ function setErrorFor(input, mensage) {
 
     small.innerText = mensage;
 
-    formControl.className
-    
+    formControl.className = "form-comtrol error";
+
+}
+
+function setSuccesFor(input, mensage) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+
+    small.innerText = mensage;
+
+    formControl.className = "form-coontrol succes";
 }

@@ -22,23 +22,29 @@
 
             <div class="form-control">
                 <label for="dia">Dia:</label>
-                <input type="number" autocomplete="off" id="dia">
+                <input type="text" autocomplete="off" id="dia" maxlength="2">
                 <small>Este dia não corresponde.</small>
             </div>
 
             <div class="form-control">
                 <label for="mes">Mês:</label>
-                <input type="number" autocomplete="off" id="mes">
+                <input type="text" autocomplete="off" id="mes" maxlength="2">
                 <small>Este mês não corresponde.</small>
             </div>
 
             <div class="form-control">
                 <label for="ano">Ano:</label>
-                <input type="number" autocomplete="off" id="ano">
+                <input type="text" autocomplete="off" id="ano" maxlength="3">
                 <small>Este ano não corresponde.</small>
             </div>
 
             <button type="submit" class="campo_entrada">Você tem</button>
+
+            <div class="form-result">
+                <input type="text" disabled="">
+            </div>
+
+            <label for="" id="by">by: Little P</label>
         </form>
 
     </div>

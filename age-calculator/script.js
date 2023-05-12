@@ -6,20 +6,9 @@ const year = document.getElementById("year");
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    VerificarInput();
+    checkInputs();
 })
 
-function VerificarInput() {
-
-    const dayValue = day.value;
-    const monthValue = month.value;
-    const yearValue = year.value;
-
-    if (dayValue === "") {
-        setErrorFor(day, "Digite o dia...");
-    }
-
-}
 function calculateAge() {
 
     let data = new Date();
@@ -52,6 +41,48 @@ function calculateAge() {
 
 }
 
+function checkInputs() {
+
+    const dayValue = day.value;
+    const monthValue = month.value;
+    const yearValue = year.value;
+
+    let data = new Date();
+    let todayYear = data.getFullYear();
+
+    if (dayValue === "") {
+        setErrorFor(day, "Digite o dia!!!");
+    }else if(dayValue){
+
+    }
+
+
+
+    if (monthValue === "") {
+        setErrorFor(month, "Digite o mês!!!");
+
+    }else if (monthValue > 12) {
+        setErrorFor(month, "Este mês não é valido.")
+        
+    } else {
+        setSuccesFor(month, null)
+    }
+
+    if (yearValue === "") {
+        setErrorFor(year, "Digite o ano!!!");
+
+    }else if (yearValue > todayYear) {
+        setErrorFor(year, "Este ano não é valido.");
+
+    }else if(year.value.length < 4){
+        setErrorFor(year, "Este ano não é valido.");
+
+    }else{
+        setSuccesFor(year, null);
+    }
+
+}
+
 function setErrorFor(input, mensage) {
     const formControl = input.parentElement;
     const small = formControl.querySelector("small")
@@ -69,4 +100,10 @@ function setSuccesFor(input, mensage) {
     small.innerText = mensage;
 
     formControl.className = "form-control succes";
+}
+
+function resultInput(input) {
+    const formResult = input.parentElement;
+
+    formResult.className = "form-result ok";
 }

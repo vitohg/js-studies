@@ -45,13 +45,13 @@ body{
 }
 
 .form-control{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     padding: 5px;
     position: relative;
 }
 
 .form-control label{
-    color: #404258;
+    color: #7C7795;
     font-size: 15px;
     display: inline-block;
     margin-bottom: 5px;
@@ -70,7 +70,9 @@ body{
 .form-control small{
     position: absolute;
     left: 0;
+    margin-top: 5px;
     margin-left: 10px;
+    font-size: 11px;
     visibility: hidden;
 }
 
@@ -80,10 +82,16 @@ body{
     color: #ffff;
     font-size: 14px;
     width: 150px;
-    align-items: center;
     border-radius: 10px;
     padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.button-result{
     align-self: center;
+    
 }
 
 .form-result input{
@@ -94,8 +102,13 @@ body{
     font-size: 14px;
     width: 100%;
     padding: 5px;
-    margin-top: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     visibility: hidden;
+}
+
+.form-result{
+    padding: 5px;
 }
 
 #by{
@@ -108,7 +121,7 @@ body{
     
 }
 
-.form-result.correct input{
+.form-result.ok input{
     visibility: visible;
 }
 

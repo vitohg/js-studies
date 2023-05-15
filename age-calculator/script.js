@@ -6,10 +6,14 @@ const year = document.getElementById("year");
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    checkInputs();
+    calculateAge();
 })
 
 function calculateAge() {
+
+    const dayValue = Number(day.value);
+    const monthValue = Number(month.value);
+    const yearValue = Number(year.value);
 
     let data = new Date();
 
@@ -19,43 +23,31 @@ function calculateAge() {
 
     let lastDayMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    if (todayDay > day) {
+    if (todayDay > dayValue) {
 
-        todayDay = day + lastDayMonth [mes2 - 1];
-        todayMonth = todayMonth + 1;
+        todayDay = dayValue + lastDayMonth [todayMonth - 1];
+        todayMonth = todayMonth - 1;
 
     }
 
-    if (month > todayMonth) {
+    if (monthValue > todayMonth) {
 
         todayMonth = todayMonth + 12;
         todayYear = todayYear - 1;
 
     }
 
-    let resultDay = todayDay - day
-    let resultMonth = todayMonth - month
-    let resultYear = todayYear - year
+    let resultDay = todayDay - dayValue
+    let resultMonth = todayMonth - monthValue
+    let resultYear = todayYear - yearValue
 
-    document.getElementById("result").innerHTML = `você tem ${resultYear} anos, ${resultMonth} meses e ${resultDay} dias.`
-
-}
-
-function checkInputs() {
-
-    const dayValue = day.value;
-    const monthValue = month.value;
-    const yearValue = year.value;
-
-    let data = new Date();
-    let todayYear = data.getFullYear();
 
     if (dayValue === "") {
         setErrorFor(day, "Digite o dia!!!");
-    }else if(dayValue){
 
+    }else {
+        setSuccesFor(day, null);
     }
-
 
 
     if (monthValue === "") {
@@ -66,6 +58,8 @@ function checkInputs() {
         
     } else {
         setSuccesFor(month, null)
+    //     resultInput(result);
+    //     document.getElementById('result').value = `${resultYear} anos, ${resultMonth} meses e ${resultDay} dias.`
     }
 
     if (yearValue === "") {
@@ -80,7 +74,6 @@ function checkInputs() {
     }else{
         setSuccesFor(year, null);
     }
-
 }
 
 function setErrorFor(input, mensage) {
@@ -106,4 +99,5 @@ function resultInput(input) {
     const formResult = input.parentElement;
 
     formResult.className = "form-result ok";
+
 }
